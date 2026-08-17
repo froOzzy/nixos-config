@@ -28,6 +28,7 @@
         export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
       '';
     };
+
     home.stateVersion = "26.05";
   };
 }
