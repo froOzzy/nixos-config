@@ -4,6 +4,12 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      terminal = {
+        shell = {
+          program = "${pkgs.fish}/bin/fish";
+          args = [ "--login" ];
+        };
+      };
       window = {
         opacity = 0.95;
         padding = { x = 15; y = 15; };

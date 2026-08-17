@@ -19,21 +19,24 @@
     '';
 
     # Настройки клавиатуры и переключения раскладки
-    "cosmic/com.system76.CosmicComp/v1/xkb_config".text = ''
-      (
-          rules: "",
-          model: "",
-          layout: "us,ru",
-          variant: ",",
-          options: None,
-          repeat_delay: 600,
-          repeat_rate: 25,
-      )
-    '';
+    "cosmic/com.system76.CosmicComp/v1/xkb_config" = {
+      text = ''
+        (
+            rules: "",
+            model: "",
+            layout: "us,ru",
+            variant: ",",
+            options: None,
+            repeat_delay: 600,
+            repeat_rate: 25,
+        )
+      '';
+      force = true;
+    };
 
     # Настройки горячих клавиш
     "cosmic/com.system76.CosmicSettings.Shortcuts/v1/custom".text = ''
-{
+    {
     (
         modifiers: [
             Super,
@@ -197,7 +200,7 @@
         ],
         key: "g",
     ): Disable,
-}
+    }
     '';
 
     # Системные действия
@@ -212,6 +215,19 @@
       [
           "Panel",
       ]
+    '';
+
+    # Настройки фона
+    "cosmic/com.system76.CosmicBackground/v1/all".text = ''
+    (
+      output: "all",
+      source: Path("${./wallpapers/a_mountain_range_with_snow_on_top.jpeg}"),
+      filter_by_theme: true,
+      rotation_frequency: 300,
+      filter_method: Lanczos,
+      scaling_mode: Zoom,
+      sampling_method: Alphanumeric,
+    )
     '';
     
     # Настройки Главной Панели (Статус-бар)

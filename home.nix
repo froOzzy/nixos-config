@@ -1,19 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
-  # Создание пользователя
-  users.users."vladislav" = {
-    isNormalUser = true;
-    description = "Vladislav Dobrovolskiy";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-  # Конфигурация Home-Manager
   home-manager.users."vladislav" = { pkgs, ... }: {
     home.packages = with pkgs; [
       docker
       docker-compose
       flameshot
+      bitwarden-desktop
+      obsidian
+      cosmic-store
+      sublime3
+      qbittorrent
     ];
 
     imports = [
@@ -22,10 +19,15 @@
       ./modules/soft/fish.nix
       ./modules/soft/firefox.nix
       ./modules/soft/nvim/neovim.nix
+      ./modules/soft/pycharm.nix
     ];
 
-    programs.bash.enable = true;
+    programs.bash = {
+      enable = true;
+      initExtra = ''
+        export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+      '';
+    };
     home.stateVersion = "26.05";
   };
- 
 }

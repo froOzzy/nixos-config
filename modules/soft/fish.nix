@@ -18,6 +18,12 @@
 
     interactiveShellInit = ''
       set fish_greeting ""
+      set -gx SSH_AUTH_SOCK "$HOME/.bitwarden-ssh-agent.sock"
+
+      # Загрузка алиасов
+      if test -f ~/.config/fish/aliases.fish
+          source ~/.config/fish/aliases.fish
+      end
     '';
   };
 }

@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -11,15 +10,50 @@
       ./home.nix
     ];
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  # Boot loader
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    systemd-boot = {
+      enable = true;
+      edk2-uefi-shell.enable = true;
+    };
+    grub = {
+      enable = false;
+    };
+  };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Создание пользователя
+  users.users."vladislav" = {
+    isNormalUser = true;
+    description = "Vladislav Dobrovolskiy";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-39.8.10"
+    ];
+  };
+
+  home-manager = {
+    backupFileExtension = "backup";
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
+
+  networking = {
+    hostName = "nixos";
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -28,32 +62,35 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+    LC_ADDRESS = "ru_RU.UTF-8";
+    LC_IDENTIFICATION = "ru_RU.UTF-8";
+    LC_MEASUREMENT = "ru_RU.UTF-8";
+    LC_MONETARY = "ru_RU.UTF-8";
+    LC_NAME = "ru_RU.UTF-8";
+    LC_NUMERIC = "ru_RU.UTF-8";
+    LC_PAPER = "ru_RU.UTF-8";
+    LC_TELEPHONE = "ru_RU.UTF-8";
+    LC_TIME = "ru_RU.UTF-8";
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "ru_RU.UTF-8/UTF-8"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     htop
     git
-    cosmic-store
+    usbutils
   ];
 
   system.stateVersion = "26.05";
 
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
+  services.system76-scheduler.enable = true;
   services.xserver.xkb = {
     layout = "us,ru";
     options = "";
@@ -62,6 +99,9 @@
 
   # Поддержка nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Включаем Flatpack для магазина cosmic-store
+  services.flatpak.enable = true;
 
   hardware = {
     graphics = {
@@ -79,8 +119,17 @@
     };
   };
 
-  # Включаем Flatpack для магазина cosmic-store
-  services.flatpak.enable = true;
+  # Отключаем обновление sublime3
+  networking.extraHosts = ''
+    127.0.0.1 www.sublimetext.com
+    127.0.0.1 sublimetext.com
+  '';
+
+  # Включаем Throne
+  programs.throne = {
+    enable = true;
+    tunMode.enable = true;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
