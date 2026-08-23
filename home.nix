@@ -11,6 +11,7 @@
       cosmic-store
       sublime3
       qbittorrent
+      telegram-desktop
     ];
 
     imports = [

@@ -23,6 +23,7 @@
           installation_mode = "force_installed";
         };
       };
+      PasswordManagerEnabled = false;
     };
     
     # Создание пользовательского профиля
