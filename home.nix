@@ -21,6 +21,7 @@
       ./modules/soft/firefox.nix
       ./modules/soft/nvim/neovim.nix
       ./modules/soft/pycharm.nix
+      ./modules/soft/thunderbird.nix
     ];
 
     programs.bash = {
