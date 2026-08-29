@@ -221,7 +221,7 @@
     "cosmic/com.system76.CosmicBackground/v1/all".text = ''
     (
       output: "all",
-      source: Path("${./wallpapers/a_mountain_range_with_snow_on_top.jpeg}"),
+      source: Path("${./wallpapers/finalizer.png}"),
       filter_by_theme: true,
       rotation_frequency: 300,
       filter_method: Lanczos,
