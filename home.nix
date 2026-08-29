@@ -11,7 +11,11 @@
       cosmic-store
       sublime3
       qbittorrent
+      onlyoffice-desktopeditors
+      filezilla
       telegram-desktop
+      pre-commit
+      k9s
     ];
 
     imports = [
@@ -24,12 +28,9 @@
       ./modules/soft/thunderbird.nix
     ];
 
-    programs.bash = {
-      enable = true;
-      initExtra = ''
-        export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
-      '';
-    };
+    xdg.configFile."environment.d/10-ssh-auth-sock.conf".text = ''
+      SSH_AUTH_SOCK=%h/.bitwarden-ssh-agent.sock
+    '';
 
     home.stateVersion = "26.05";
   };

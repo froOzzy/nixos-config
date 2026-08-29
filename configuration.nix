@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/fonts.nix
       ./modules/soft/keyd.nix
       ./modules/usb.nix
       ./modules/gc.nix
@@ -132,4 +133,25 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.substituters = [
+     "https://mirror.sjtu.edu.cn/nix-channels/store"
+     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+     "https://mirrors.ustc.edu.cn/nix-channels/store"
+  ];
+
+  # Включаем systemctl для docker
+  virtualisation.docker.enable = true;
+
+  networking.firewall = {
+    enable = true;
+    checkReversePath = "loose";
+
+    # Разрешаем входящие соединения со всех интерфейсов Docker и Docker Compose
+    extraCommands = ''
+      iptables -I INPUT 1 -i docker0 -j ACCEPT
+      iptables -I INPUT 1 -i br-+ -j ACCEPT
+    '';
+
+  };  
 }
