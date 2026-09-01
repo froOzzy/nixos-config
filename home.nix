@@ -15,7 +15,6 @@
       telegram-desktop
       pre-commit
       k9s
-      wayshot
     ];
 
     imports = [
