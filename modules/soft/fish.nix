@@ -25,5 +25,8 @@
           source ~/.config/fish/aliases.fish
       end
     '';
+    shellAliases = {
+      ssh = "env TERM=xterm-256color ssh";  
+    };
   };
 }

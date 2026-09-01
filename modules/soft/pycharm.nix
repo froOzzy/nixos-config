@@ -3,11 +3,11 @@
 let
   pycharm = pkgs.stdenv.mkDerivation rec {
     pname = "jetbrains-pycharm";
-    version = "2025.2.6.2";
+    version = "2026.2.1";
 
     src = pkgs.fetchurl {
-      url = "https://download.jetbrains.com/python/pycharm-2025.2.6.2.tar.gz";
-      hash = "sha256-AddEEEBpTsaYKtGqyX9vX+e8Uv2IsAq2dI85PcOqXXg=";
+      url = "https://download.jetbrains.com/python/pycharm-2026.2.1.tar.gz";
+      hash = "sha256-nP9vGOwoo9UWQ7z0fwAb7RlCYBhfpvVpP1pvg8666Gg=";
     };
 
     nativeBuildInputs = [ pkgs.autoPatchelfHook pkgs.makeWrapper ];
@@ -47,7 +47,8 @@ let
         --set JAVA_HOME "${pkgs.jetbrains.jdk}" \
         --set JDK_HOME "${pkgs.jetbrains.jdk}" \
         --set GATEWAY_JDK "${pkgs.jdk}" \
-        --set JETBRAINSCLIENT_JDK "${pkgs.jetbrains.jdk.home}"
+        --set JETBRAINSCLIENT_JDK "${pkgs.jetbrains.jdk.home}" \
+        --set SSH_AUTH_SOCK "/home/vladislav/.bitwarden-ssh-agent.sock"
     '';
   };
 

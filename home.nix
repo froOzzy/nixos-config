@@ -5,7 +5,6 @@
     home.packages = with pkgs; [
       docker
       docker-compose
-      flameshot
       bitwarden-desktop
       obsidian
       cosmic-store
@@ -16,6 +15,7 @@
       telegram-desktop
       pre-commit
       k9s
+      wayshot
     ];
 
     imports = [

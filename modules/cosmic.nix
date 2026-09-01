@@ -76,10 +76,6 @@
         key: "Escape",
     ): Disable,
     (
-        modifiers: [],
-        key: "Print",
-    ): Disable,
-    (
         modifiers: [
             Super,
         ],

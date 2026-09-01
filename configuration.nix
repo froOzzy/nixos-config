@@ -12,25 +12,16 @@
     ];
 
   # Boot loader
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
-    systemd-boot = {
-      enable = true;
-      edk2-uefi-shell.enable = true;
-    };
-    grub = {
-      enable = false;
-    };
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.luks.devices."luks-571f74f6-94b2-47c8-abb2-2bd64c43b11f".device = "/dev/disk/by-uuid/571f74f6-94b2-47c8-abb2-2bd64c43b11f";
 
   # Создание пользователя
   users.users."vladislav" = {
     isNormalUser = true;
     description = "Vladislav Dobrovolskiy";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   nixpkgs.config = {
@@ -47,7 +38,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "dobrovolskiy";
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
@@ -84,13 +75,23 @@
   environment.systemPackages = with pkgs; [
     htop
     git
+    git-credential-manager
     usbutils
+    google-authenticator
   ];
 
   system.stateVersion = "26.05";
 
+  # Ставим cosmic-desktop
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
+  # Включаем 2fa
+  security.pam.services.cosmic-greeter.googleAuthenticator = {
+    enable = false;
+    allowNullOTP = true;
+    forwardPass = true;
+  };
+
   services.system76-scheduler.enable = true;
   services.xserver.xkb = {
     layout = "us,ru";
@@ -99,7 +100,7 @@
   console.useXkbConfig = true;
 
   # Поддержка nvidia
-  services.xserver.videoDrivers = [ "nvidia" ];
+  #services.xserver.videoDrivers = [ "nvidia" ];
 
   # Включаем Flatpack для магазина cosmic-store
   services.flatpak.enable = true;
@@ -110,14 +111,14 @@
       enable32Bit = true;
     };
 
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
+    #nvidia = {
+    #  modesetting.enable = true;
+    #  powerManagement.enable = false;
+    #  powerManagement.finegrained = false;
+    #  open = false;
+    #  nvidiaSettings = true;
+    #  package = config.boot.kernelPackages.nvidiaPackages.stable;
+    #};
   };
 
   # Отключаем обновление sublime3
@@ -152,6 +153,5 @@
       iptables -I INPUT 1 -i docker0 -j ACCEPT
       iptables -I INPUT 1 -i br-+ -j ACCEPT
     '';
-
-  };  
+  };
 }

@@ -3,6 +3,10 @@
   programs.firefox = {
     enable = true;
 
+    nativeMessagingHosts = with pkgs; [
+      tridactyl-native
+    ];
+
     # Глобальный профиль
     policies = {
       ExtensionSettings = {
