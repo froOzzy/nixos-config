@@ -196,6 +196,10 @@
         ],
         key: "g",
     ): Disable,
+    (
+        modifiers: [],
+        key: "Print",
+    ): Command("org.flameshot.Flameshot gui"),
     }
     '';
 
