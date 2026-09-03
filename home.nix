@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home-manager.users."vladislav" = { pkgs, ... }: {
@@ -27,9 +27,13 @@
       ./modules/soft/thunderbird.nix
     ];
 
-    xdg.configFile."environment.d/10-ssh-auth-sock.conf".text = ''
-      SSH_AUTH_SOCK=%h/.bitwarden-ssh-agent.sock
-    '';
+    systemd.user.sessionVariables = {
+      SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
+    };
+
+    #xdg.configFile."environment.d/10-ssh-auth-sock.conf".text = ''
+    #  SSH_AUTH_SOCK=%h/.bitwarden-ssh-agent.sock
+    #'';
 
     home.stateVersion = "26.05";
   };

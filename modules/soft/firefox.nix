@@ -26,6 +26,10 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4455681/traduzir_paginas_web-10.1.1.1.xpi";
           installation_mode = "force_installed";
         };
+        "foxyproxy@eric.h.jung" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4955558/foxyproxy_standard-9.7.xpi";
+          installation_mode = "force_installed";
+        };
       };
       PasswordManagerEnabled = false;
     };

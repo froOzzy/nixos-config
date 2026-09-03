@@ -36,171 +36,171 @@
 
     # Настройки горячих клавиш
     "cosmic/com.system76.CosmicSettings.Shortcuts/v1/custom".text = ''
-    {
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "s",
-    ): Focus(Down),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "l",
-    ): System(LockScreen),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "a",
-    ): Move(Left),
-    (
-        modifiers: [
-            Ctrl,
-        ],
-        key: "Escape",
-    ): System(Terminal),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Escape",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "m",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "a",
-    ): Focus(Left),
-    (
-        modifiers: [
-            Ctrl,
-            Alt,
-        ],
-        key: "p",
-    ): System(Screenshot),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "w",
-    ): Focus(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "e",
-    ): System(HomeFolder),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "d",
-    ): Move(Right),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "d",
-    ): Focus(Right),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "w",
-    ): Move(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "f",
-    ): ToggleWindowFloating,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "t",
-    ): ToggleStacking,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "s",
-    ): Move(Down),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "g",
-    ): Disable,
-    (
-        modifiers: [],
-        key: "Print",
-    ): Command("org.flameshot.Flameshot gui"),
-    }
+      {
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "s",
+          ): Focus(Down),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "l",
+          ): System(LockScreen),
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "Right",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "a",
+          ): Move(Left),
+          (
+              modifiers: [
+                  Ctrl,
+              ],
+              key: "Escape",
+          ): System(Terminal),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "Escape",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "m",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "Left",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "Up",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "Down",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "Up",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "a",
+          ): Focus(Left),
+          (
+              modifiers: [
+                  Ctrl,
+                  Alt,
+              ],
+              key: "p",
+          ): System(Screenshot),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "w",
+          ): Focus(Up),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "e",
+          ): System(HomeFolder),
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "d",
+          ): Move(Right),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "d",
+          ): Focus(Right),
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "w",
+          ): Move(Up),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "Down",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "f",
+          ): ToggleWindowFloating,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "Right",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "Left",
+          ): Disable,
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "t",
+          ): ToggleStacking,
+          (
+              modifiers: [
+                  Super,
+                  Shift,
+              ],
+              key: "s",
+          ): Move(Down),
+          (
+              modifiers: [
+                  Super,
+              ],
+              key: "g",
+          ): Disable,
+          (
+              modifiers: [],
+              key: "Print",
+          ): Command("flatpak run org.flameshot.Flameshot gui"),
+      }
     '';
 
     # Системные действия
@@ -219,15 +219,15 @@
 
     # Настройки фона
     "cosmic/com.system76.CosmicBackground/v1/all".text = ''
-    (
-      output: "all",
-      source: Path("${./wallpapers/finalizer.png}"),
-      filter_by_theme: true,
-      rotation_frequency: 300,
-      filter_method: Lanczos,
-      scaling_mode: Zoom,
-      sampling_method: Alphanumeric,
-    )
+      (
+          output: "all",
+          source: Path("${./wallpapers/finalizer.png}"),
+          filter_by_theme: true,
+          rotation_frequency: 300,
+          filter_method: Lanczos,
+          scaling_mode: Zoom,
+          sampling_method: Alphanumeric,
+      )
     '';
     
     # Настройки Главной Панели (Статус-бар)
