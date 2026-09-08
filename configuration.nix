@@ -154,4 +154,7 @@
       iptables -I INPUT 1 -i br-+ -j ACCEPT
     '';
   };
+
+  # Включаем resolved
+  services.resolved.enable = true;
 }
