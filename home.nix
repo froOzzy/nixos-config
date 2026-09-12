@@ -16,6 +16,7 @@
       pre-commit
       k9s
       qwen-code
+      unzip
     ];
 
     imports = [
