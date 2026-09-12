@@ -163,7 +163,7 @@
                   Super,
               ],
               key: "f",
-          ): ToggleWindowFloating,
+          ): Maximize,
           (
               modifiers: [
                   Super,
