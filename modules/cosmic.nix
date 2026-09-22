@@ -273,4 +273,13 @@
       ]))
     '';
   };
+
+  # Настройка приложений по умолчанию
+  home.file.".config/cosmic-mimeapps.list".text = ''
+    [Default Applications]
+    application/x-terminal-emulator=Alacritty.desktop
+    application/x-zerosize=sublime_text.desktop
+    text/plain=sublime_text.desktop
+    x-scheme-handler/terminal=Alacritty.desktop
+  '';
 }
