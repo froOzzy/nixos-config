@@ -12,10 +12,10 @@
       sublime3
       qbittorrent
       onlyoffice-desktopeditors
-      filezilla
       telegram-desktop
       pre-commit
       k9s
+      unzip
     ];
 
     imports = [
@@ -26,11 +26,17 @@
       ./modules/soft/nvim/neovim.nix
       ./modules/soft/pycharm.nix
       ./modules/soft/thunderbird.nix
+      ./modules/soft/filezilla.nix
     ];
 
-    xdg.configFile."environment.d/10-ssh-auth-sock.conf".text = ''
-      SSH_AUTH_SOCK=%h/.bitwarden-ssh-agent.sock
-    '';
+    home.sessionVariables = {
+      SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
+    };
+
+    systemd.user.sessionVariables = {
+      SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
+    };
+
 
     home.stateVersion = "26.05";
   };
