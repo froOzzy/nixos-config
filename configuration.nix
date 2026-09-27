@@ -4,6 +4,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./modules/desktops/cosmic/default.nix
+      ./modules/desktops/niri/default.nix
       ./modules/fonts.nix
       ./modules/soft/keyd.nix
       ./modules/usb.nix
@@ -82,9 +84,6 @@
 
   system.stateVersion = "26.05";
 
-  # Ставим cosmic-desktop
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
   # Включаем 2fa
   security.pam.services.cosmic-greeter.googleAuthenticator = {
     enable = false;
@@ -92,18 +91,11 @@
     forwardPass = true;
   };
 
-  services.system76-scheduler.enable = true;
   services.xserver.xkb = {
     layout = "us,ru";
     options = "";
   };
   console.useXkbConfig = true;
-
-  # Поддержка nvidia
-  #services.xserver.videoDrivers = [ "nvidia" ];
-
-  # Включаем Flatpack для магазина cosmic-store
-  services.flatpak.enable = true;
 
   hardware = {
     graphics = {
@@ -117,12 +109,6 @@
     127.0.0.1 www.sublimetext.com
     127.0.0.1 sublimetext.com
   '';
-
-  # Включаем Throne
-  programs.throne = {
-    enable = true;
-    tunMode.enable = true;
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
