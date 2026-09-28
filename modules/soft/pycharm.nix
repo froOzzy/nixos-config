@@ -6,7 +6,7 @@ let
     version = "2026.2.1";
 
     src = pkgs.fetchurl {
-      url = "https://download.jetbrains.com/python/pycharm-2026.2.1.tar.gz";
+      url = "http://fs.lan/jetbrains/pycharm-professional-2026.2.1.tar.gz";
       hash = "sha256-nP9vGOwoo9UWQ7z0fwAb7RlCYBhfpvVpP1pvg8666Gg=";
     };
 
