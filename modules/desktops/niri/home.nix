@@ -4,6 +4,7 @@ let
   # Абсолютный путь к конфигу
   niriConfigPath = "/home/vladislav/.config/nixos-config/modules/desktops/niri/config.kdl";
   noctaliaConfigPath = "/home/vladislav/.config/nixos-config/modules/desktops/niri/config.toml";
+  noctaliaColorPath = "/home/vladislav/.config/nixos-config/modules/desktops/niri/cosmic.json";
 in
 
 {
@@ -14,6 +15,10 @@ in
 
   home.file.".config/noctalia/config.toml" = {
     source = config.lib.file.mkOutOfStoreSymlink noctaliaConfigPath;
+  };
+
+  home.file.".config/noctalia/palettes/cosmic.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink noctaliaColorPath;
   };
 
 

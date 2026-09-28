@@ -7,7 +7,6 @@
       #./modules/desktops/cosmic/default.nix
       ./modules/desktops/niri/default.nix
       ./modules/fonts.nix
-      ./modules/soft/keyd.nix
       ./modules/usb.nix
       ./modules/gc.nix
       ./home.nix
