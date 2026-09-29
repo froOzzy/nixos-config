@@ -7,5 +7,6 @@
   environment.systemPackages = with pkgs; [
     noctalia
     cosmic-files
+    xwayland-satellite
   ];
 }
