@@ -79,6 +79,7 @@
     git-credential-manager
     usbutils
     google-authenticator
+    google-chrome
   ];
 
   system.stateVersion = "26.05";

@@ -23,6 +23,7 @@ in
       stylua
       git
       lazygit
+      wget
     ];
   };
 

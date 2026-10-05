@@ -14,9 +14,11 @@
       onlyoffice-desktopeditors
       telegram-desktop
       pre-commit
+      kubectl
       k9s
       qwen-code
       unzip
+      nodejs
     ];
 
     imports = [

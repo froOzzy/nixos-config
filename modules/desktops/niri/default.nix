@@ -2,7 +2,7 @@
 
 {
   programs.niri.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager.noctalia-greeter.enable = true;
 
   environment.systemPackages = with pkgs; [
     noctalia

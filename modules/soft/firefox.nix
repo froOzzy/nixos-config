@@ -9,6 +9,7 @@
 
     # Глобальный профиль
     policies = {
+      TranslateEnabled = false;
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4872816/ublock_origin-1.72.0.xpi";
