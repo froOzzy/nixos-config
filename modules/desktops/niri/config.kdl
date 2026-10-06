@@ -262,7 +262,7 @@ layout {
 spawn-at-startup "noctalia"
 spawn-at-startup "firefox"
 spawn-at-startup "obsidian"
-spawn-at-startup "alacritty" "--class" "nvim-buffer" "-e" "nvim"
+spawn-at-startup "jetbrains-pycharm"
 spawn-at-startup "Telegram"
 spawn-at-startup "thunderbird"
 
@@ -318,7 +318,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^nvim-buffer$"#
+    match app-id=r#"^jetbrains-pycharm$"#
     open-on-workspace "💻"
     open-maximized true
 }

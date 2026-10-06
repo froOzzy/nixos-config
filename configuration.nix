@@ -80,6 +80,7 @@
     usbutils
     google-authenticator
     google-chrome
+    python3
   ];
 
   system.stateVersion = "26.05";

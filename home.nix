@@ -17,8 +17,10 @@
       kubectl
       k9s
       qwen-code
+      uv
       unzip
       nodejs
+      grim
     ];
 
     imports = [
