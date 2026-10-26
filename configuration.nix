@@ -4,8 +4,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #./modules/desktops/cosmic/default.nix
-      ./modules/desktops/niri/default.nix
+      #./modules/environment/cosmic/default.nix
+      ./modules/environment/niri/default.nix
       ./modules/fonts.nix
       ./modules/usb.nix
       ./modules/gc.nix

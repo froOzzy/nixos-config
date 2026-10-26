@@ -25,8 +25,8 @@
     ];
 
     imports = [
-      ./modules/desktops/cosmic/home.nix
-      ./modules/desktops/niri/home.nix
+      ./modules/environment/cosmic/home.nix
+      ./modules/environment/niri/home.nix
       ./modules/soft/alacritty.nix
       ./modules/soft/fish.nix
       ./modules/soft/firefox.nix
