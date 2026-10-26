@@ -4,6 +4,8 @@ return {
     opts = {
       servers = {
         pyright = {
+          -- Installed by programs.neovim.extraPackages in neovim.nix.
+          mason = false,
           settings = {
             python = {
               analysis = {

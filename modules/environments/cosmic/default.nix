@@ -1,9 +1,19 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  
   environment.systemPackages = [ pkgs.keyd ];
-  
+
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
+  services.system76-scheduler.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    cosmic-store
+  ];
+
+  # Включаем Flatpack для магазина cosmic-store
+  services.flatpak.enable = true;
+
   services.keyd = {
     enable = true;
     keyboards = {
@@ -23,3 +33,4 @@
     };
   };
 }
+

@@ -4,10 +4,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./modules/environments/cosmic/default.nix
+      ./modules/environments/niri/default.nix
       ./modules/fonts.nix
-      ./modules/soft/keyd.nix
       ./modules/usb.nix
       ./modules/gc.nix
+      ./modules/totp.nix
       ./home.nix
     ];
 
@@ -89,12 +91,6 @@
 
   system.stateVersion = "26.05";
 
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
-  services.system76-scheduler.enable = true;
-
-  programs.niri.enable = true;
-
   services.xserver.xkb = {
     layout = "us,ru";
     options = "";
@@ -103,9 +99,6 @@
 
   # Поддержка nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  # Включаем Flatpack для магазина cosmic-store
-  services.flatpak.enable = true;
 
   hardware = {
     graphics = {

@@ -240,7 +240,7 @@
       text = ''
       (
         output: "all",
-        source: Path("${./wallpapers/finalizer.png}"),
+        source: Path("${./../../wallpapers/finalizer.png}"),
         filter_by_theme: true,
         rotation_frequency: 300,
         filter_method: Lanczos,
