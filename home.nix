@@ -21,6 +21,7 @@
       unzip
       nodejs
       grim
+      lazydocker
     ];
 
     imports = [
