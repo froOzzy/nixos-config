@@ -34,6 +34,7 @@
       ./modules/soft/pycharm.nix
       ./modules/soft/thunderbird.nix
       ./modules/soft/filezilla.nix
+      ./modules/soft/screenshot.nix
     ];
 
     home.sessionVariables = {
