@@ -22,11 +22,12 @@
       nodejs
       grim
       lazydocker
+      codex
     ];
 
     imports = [
-      ./modules/environment/cosmic/home.nix
-      ./modules/environment/niri/home.nix
+      ./modules/environments/cosmic/home.nix
+      ./modules/environments/niri/home.nix
       ./modules/soft/alacritty.nix
       ./modules/soft/fish.nix
       ./modules/soft/firefox.nix

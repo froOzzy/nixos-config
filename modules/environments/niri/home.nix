@@ -2,9 +2,9 @@
 
 let
   # Абсолютный путь к конфигу
-  niriConfigPath = "/home/vladislav/.config/nixos-config/modules/environment/niri/config.kdl";
-  noctaliaConfigPath = "/home/vladislav/.config/nixos-config/modules/environment/niri/config.toml";
-  noctaliaColorPath = "/home/vladislav/.config/nixos-config/modules/environment/niri/cosmic.json";
+  niriConfigPath = "/home/vladislav/.config/nixos-config/modules/environments/niri/config.kdl";
+  noctaliaConfigPath = "/home/vladislav/.config/nixos-config/modules/environments/niri/config.toml";
+  noctaliaColorPath = "/home/vladislav/.config/nixos-config/modules/environments/niri/cosmic.json";
 in
 
 {
