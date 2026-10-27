@@ -340,6 +340,11 @@ window-rule {
     open-on-workspace "💬"
     open-maximized true
 }
+
+window-rule {
+    match app-id="com.gabm.satty.screenshot"
+    open-floating true
+}
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
