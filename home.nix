@@ -22,7 +22,6 @@
       nodejs
       grim
       lazydocker
-      codex
     ];
 
     imports = [
@@ -36,6 +35,7 @@
       ./modules/soft/thunderbird.nix
       ./modules/soft/filezilla.nix
       ./modules/soft/screenshot.nix
+      ./modules/soft/codex.nix
     ];
 
     home.sessionVariables = {
