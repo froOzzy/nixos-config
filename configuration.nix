@@ -31,7 +31,7 @@
   users.users."vladislav" = {
     isNormalUser = true;
     description = "Vladislav Dobrovolskiy";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   nixpkgs.config = {

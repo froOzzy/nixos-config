@@ -5,6 +5,20 @@
 
     # Глобальный профиль
     policies = {
+      Bookmarks = [
+        {
+          Title = "homelable";
+          URL = "https://github.com/Pouzor/homelable";
+          Folder = "Homelab Utils";
+          Placement = "toolbar";
+        }
+        {
+          Title = "Home Assistant";
+          URL = "https://www.home-assistant.io/";
+          Folder = "Homelab Utils";
+          Placement = "toolbar";
+        }
+      ];
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4872816/ublock_origin-1.72.0.xpi";
