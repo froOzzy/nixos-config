@@ -25,7 +25,6 @@
       ./modules/soft/fish.nix
       ./modules/soft/firefox.nix
       ./modules/soft/nvim/neovim.nix
-      #./modules/soft/pycharm.nix
       ./modules/soft/thunderbird.nix
       ./modules/soft/filezilla.nix
       ./modules/soft/screenshot.nix
