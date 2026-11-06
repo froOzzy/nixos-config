@@ -2,6 +2,12 @@
 
 let
   defaultWorkspace = "${config.home.homeDirectory}/Documents/Skills";
+  browserPython = pkgs.python3.withPackages (ps: [
+    ps.playwright
+  ]);
+  fontConfig = pkgs.makeFontsConf {
+    fontDirectories = [ pkgs.dejavu_fonts ];
+  };
 
   tools = pkgs.buildEnv {
     name = "codex-isolated-tools";
@@ -19,14 +25,18 @@ let
       cacert
 
       # Дополнительные инструменты:
-      # nodejs
-      # python3
+      nodejs
+      browserPython
     ];
   };
 
   # Только необходимые пакеты и их зависимости.
   closure = pkgs.closureInfo {
-    rootPaths = [ tools ];
+    rootPaths = [
+      tools
+      pkgs.playwright-driver.browsers
+      fontConfig
+    ];
   };
 
   launcher = pkgs.writeShellApplication {
@@ -106,6 +116,10 @@ let
         --setenv TERM "''${TERM:-xterm-256color}"
         --setenv SSL_CERT_FILE ${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
         --setenv GIT_SSL_CAINFO ${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
+        --setenv PLAYWRIGHT_NODEJS_PATH ${pkgs.nodejs}/bin/node
+        --setenv PLAYWRIGHT_BROWSERS_PATH ${pkgs.playwright-driver.browsers}
+        --setenv PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD "1"
+        --setenv FONTCONFIG_FILE ${fontConfig}
       )
 
       # Подключаем инструменты и библиотеки только на чтение.
