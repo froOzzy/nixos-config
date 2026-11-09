@@ -7,7 +7,6 @@
       #./modules/environments/cosmic/default.nix
       ./modules/environments/niri/default.nix
       ./modules/fonts.nix
-      ./modules/usb.nix
       ./modules/gc.nix
       ./home.nix
     ];
