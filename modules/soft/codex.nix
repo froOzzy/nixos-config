@@ -27,6 +27,7 @@ let
       # Дополнительные инструменты:
       nodejs
       browserPython
+      git
     ];
   };
 

@@ -8,6 +8,7 @@
       ./modules/environments/niri/default.nix
       ./modules/fonts.nix
       ./modules/gc.nix
+      ./modules/printer.nix
       ./home.nix
     ];
 

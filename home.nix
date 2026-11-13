@@ -22,6 +22,7 @@
       nodejs
       grim
       lazydocker
+      marktext
     ];
 
     imports = [
